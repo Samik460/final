@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#050505" />
+  <meta name="description" content="Samik Khanal — student developer, creative technologist and builder." />
+  <title>Samik Khanal — Developer Portfolio</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.179.1/build/three.min.js"></script>
+</head>
+<body class="intro-lock">
+
+  <!-- =========================================================
+       CINEMATIC INTRO
+       No visible intro text, counters or UI labels.
+       The video autoplays at 1.3x and is scrubbed smoothly
+       by the mouse wheel/trackpad.
+       ========================================================= -->
+  <section id="introExperience" class="intro-experience" aria-label="Portfolio introduction">
+    <video
+      id="introVideo"
+      class="intro-video"
+      muted
+      autoplay
+      playsinline
+      webkit-playsinline
+      preload="auto"
+      disablepictureinpicture
+      controlslist="nodownload noplaybackrate nofullscreen noremoteplayback"
+    >
+      <source src="./intro.mp4" type="video/mp4">
+    </video>
+    <div class="scroll-cue" aria-hidden="true">SCROLL TO CONTINUE <span>↓</span></div>
+  </section>
+
+  <!-- =========================================================
+       LOCKED TONY → SAMIK STORY
+       One scroll gesture moves exactly one slide.
+       ========================================================= -->
+  <section id="storyExperience" class="story-experience" aria-hidden="true">
+    <div class="story-noise"></div>
+    <div class="story-vignette"></div>
+
+    <div class="story-slide active" data-story="0">
+      <h2>TONY STARK.</h2>
+    </div>
+
+    <div class="story-slide" data-story="1">
+      <h2>WHO??</h2>
+    </div>
+
+    <div class="story-slide" data-story="2">
+      <h2>I AM HERE.</h2>
+    </div>
+
+    <div class="story-slide story-last" data-story="3">
+      <h2>I'M SAMIK.</h2>
+    </div>
+
+    <div class="scroll-cue" aria-hidden="true">SCROLL TO CONTINUE <span>↓</span></div>
+    <div class="story-flash"></div>
+  </section>
+
+  <!-- =========================================================
+       FINAL CINEMATIC REVEAL
+       ========================================================= -->
+  <section id="storyExit" class="story-exit" aria-hidden="true">
+    <div class="exit-grid"></div>
+    <div class="exit-ring exit-ring-a"></div>
+    <div class="exit-ring exit-ring-b"></div>
+    <div class="exit-ring exit-ring-c"></div>
+    <div class="exit-line exit-line-h"></div>
+    <div class="exit-line exit-line-v"></div>
+    <div class="exit-core"></div>
+  </section>
+
+  <div id="mainSite">
+  <!-- Real background video for the original portfolio UI. -->
+  <video
+    id="backgroundVideo"
+    class="portfolio-background-video"
+    muted
+    loop
+    playsinline
+    webkit-playsinline
+    preload="auto"
+    disablepictureinpicture
+    controlslist="nodownload noplaybackrate nofullscreen noremoteplayback"
+    aria-hidden="true"
+  >
+    <source src="./iron man.mp4" type="video/mp4">
+    <source src="./iron-man.mp4" type="video/mp4">
+  </video>
+
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <canvas id="space"></canvas>
+  <div class="noise"></div>
+  <div class="vignette"></div>
+
+  <nav class="nav">
+    <a href="#home" class="brand magnetic">SK<span>.</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="nav-cta magnetic">Let's build <span>↗</span></a>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero section">
+      <div class="hero-orb orb-one"></div>
+      <div class="hero-orb orb-two"></div>
+
+      <div class="hero-copy">
+        <p class="eyebrow reveal">STUDENT DEVELOPER · CREATIVE TECHNOLOGIST</p>
+        <h1 class="hero-title">
+          <span class="line">BUILDING</span>
+          <span class="line gradient-text">WHAT'S NEXT.</span>
+        </h1>
+        <p class="hero-description reveal">
+          I'm <strong>Samik Khanal</strong> — a Grade 9 student and aspiring Computer Engineer
+          who enjoys turning ideas into websites, software, AI assistants and digital experiences.
+        </p>
+        <div class="hero-actions reveal">
+          <a href="#projects" class="button button-primary magnetic">Explore my work <span>↓</span></a>
+          <a href="#about" class="button button-ghost magnetic">About me <span>↗</span></a>
+        </div>
+      </div>
+
+      <div class="hero-status reveal">
+        <span class="status-dot"></span>
+        <span>ONLINE / BUILD MODE</span>
+        <span class="status-location">NEPAL · 2026</span>
+      </div>
+
+      <div class="scroll-hint">SCROLL TO EXPLORE <span>↓</span></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about">
+      <div class="section-label">01 / ABOUT</div>
+      <div class="about-grid">
+        <div>
+          <p class="eyebrow">A LITTLE ABOUT ME</p>
+          <h2>I don't just <span class="gradient-text">learn tech.</span><br> I build with it.</h2>
+        </div>
+        <div class="about-text">
+          <p>
+            I'm Samik, a student developer from Nepal with a strong interest in
+            computer engineering, web development, Python, AI and creative technology.
+          </p>
+          <p>
+            I'm currently studying in Grade 9 at Oxford Secondary School, Butwal.
+            I like starting from the foundation, understanding how things actually work,
+            and then pushing the design until it feels like a real product.
+          </p>
+          <p>
+            My projects range from personal AI assistants and family websites to
+            business management systems and interactive portfolio experiences.
+          </p>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat-card tilt-card">
+          <span class="stat-number">01</span>
+          <span class="stat-label">BUILDING</span>
+          <strong>Real Projects</strong>
+        </div>
+        <div class="stat-card tilt-card">
+          <span class="stat-number">02</span>
+          <span class="stat-label">EXPLORING</span>
+          <strong>AI + Web</strong>
+        </div>
+        <div class="stat-card tilt-card">
+          <span class="stat-number">03</span>
+          <span class="stat-label">AIMING FOR</span>
+          <strong>Computer Engineering</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section projects">
+      <div class="section-label">02 / PROJECTS</div>
+      <div class="section-heading">
+        <p class="eyebrow">SELECTED BUILDS</p>
+        <h2>Ideas turned into <span class="gradient-text">interfaces.</span></h2>
+      </div>
+
+      <div class="project-list">
+        <article class="project-card tilt-card">
+          <div class="project-index">01</div>
+          <div class="project-content">
+            <p class="project-type">AI / PYTHON / AUTOMATION</p>
+            <h3>JARVIS ASSISTANT</h3>
+            <p>A personal voice assistant concept inspired by cinematic AI interfaces, with plans for voice control, AI conversation, computer vision and automation.</p>
+            <div class="tags"><span>Python</span><span>AI</span><span>Voice</span><span>Computer Vision</span></div>
+          </div>
+          <span class="project-arrow">↗</span>
+        </article>
+
+        <article class="project-card tilt-card">
+          <div class="project-index">02</div>
+          <div class="project-content">
+            <p class="project-type">WEB / DJANGO / DATABASE</p>
+            <h3>KHANAL FAMILY</h3>
+            <p>A multi-page family platform concept with member profiles, photo uploads, family connections, chat features and a relationship tree.</p>
+            <div class="tags"><span>Django</span><span>Python</span><span>Database</span><span>Web</span></div>
+          </div>
+          <span class="project-arrow">↗</span>
+        </article>
+
+        <article class="project-card tilt-card">
+          <div class="project-index">03</div>
+          <div class="project-content">
+            <p class="project-type">BUSINESS / WEB APP / MANAGEMENT</p>
+            <h3>SHOP MANAGEMENT SYSTEM</h3>
+            <p>A private sales-management platform concept for a mobile shop, designed around roles, permissions, products, sales and administration.</p>
+            <div class="tags"><span>Admin</span><span>Sales</span><span>Database</span><span>UI/UX</span></div>
+          </div>
+          <span class="project-arrow">↗</span>
+        </article>
+
+        <article class="project-card tilt-card">
+          <div class="project-index">04</div>
+          <div class="project-content">
+            <p class="project-type">CREATIVE DEVELOPMENT</p>
+            <h3>INTERACTIVE PORTFOLIO</h3>
+            <p>This website itself: cinematic motion, 3D particles, parallax depth, responsive layouts and a visual-first developer identity.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Three.js</span></div>
+          </div>
+          <span class="project-arrow">↗</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section skills">
+      <div class="section-label">03 / TOOLKIT</div>
+      <div class="skills-layout">
+        <div>
+          <p class="eyebrow">CURRENT STACK</p>
+          <h2>Learning.<br><span class="gradient-text">Building.</span><br>Repeating.</h2>
+        </div>
+        <div class="skill-cloud">
+          <span class="skill-pill big">Python</span>
+          <span class="skill-pill">HTML</span>
+          <span class="skill-pill">CSS</span>
+          <span class="skill-pill big">JavaScript</span>
+          <span class="skill-pill">Django</span>
+          <span class="skill-pill">Three.js</span>
+          <span class="skill-pill">Git</span>
+          <span class="skill-pill big">AI</span>
+          <span class="skill-pill">UI / UX</span>
+          <span class="skill-pill">Responsive Design</span>
+          <span class="skill-pill">Database</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <div class="contact-glow"></div>
+      <div class="section-label">04 / CONTACT</div>
+      <div class="contact-content">
+        <p class="eyebrow">HAVE AN IDEA?</p>
+        <h2>LET'S BUILD<br><span class="gradient-text">SOMETHING.</span></h2>
+        <p>Whether it's a website, AI project or a crazy idea that needs turning into reality — I'm interested.</p>
+        <a class="contact-button magnetic" href="mailto:your-email@example.com">Start a conversation <span>↗</span></a>
+      </div>
+      <footer>
+        <span>© 2026 SAMIK KHANAL</span>
+        <span>MADE IN NEPAL · WITH CODE & CURIOSITY</span>
+      </footer>
+    </section>
+  </main>
+  </div>
+
+  <script src="logic.js"></script>
+</body>
+</html>
